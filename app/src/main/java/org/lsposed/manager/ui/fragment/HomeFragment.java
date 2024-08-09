@@ -131,9 +131,9 @@ public class HomeFragment extends BaseFragment implements MenuProvider {
             var sepolicyAbnormal = !ConfigManager.isSepolicyLoaded();
             var systemServerAbnormal = !ConfigManager.systemServerRequested();
             if (sepolicyAbnormal || systemServerAbnormal || dex2oatAbnormal) {
-                binding.statusTitle.setText(R.string.partial_activated);
-                binding.statusIcon.setImageResource(R.drawable.ic_round_warning_24);
-                binding.warningCard.setVisibility(View.VISIBLE);
+                binding.statusTitle.setText(R.string.activated);
+                binding.statusIcon.setImageResource(R.drawable.ic_round_check_circle_24);
+                binding.warningCard.setVisibility(View.GONE);
                 if (sepolicyAbnormal) {
                     binding.warningTitle.setText(R.string.selinux_policy_not_loaded_summary);
                     binding.warningSummary.setText(HtmlCompat.fromHtml(getString(R.string.selinux_policy_not_loaded), HtmlCompat.FROM_HTML_MODE_LEGACY));

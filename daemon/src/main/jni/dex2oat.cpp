@@ -75,8 +75,6 @@ Java_org_lsposed_lspd_service_Dex2OatService_doMountNative(JNIEnv *env, jobject,
             if (d32) umount(d32p);
             if (r64) umount(r64p);
             if (d64) umount(d64p);
-            execlp("resetprop", "resetprop", "dalvik.vm.dex2oat-flags", "--inline-max-code-units=0",
-                   nullptr);
         }
 
         PLOGE("Failed to resetprop");
