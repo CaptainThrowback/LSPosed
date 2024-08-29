@@ -18,6 +18,9 @@
 #
 
 MODDIR=${0%/*}
+
+rm -f "/data/local/tmp/daemon.apk"
+rm -f "/data/local/tmp/manager.apk"
 cd "$MODDIR"
-# post-fs-data.sh may be blocked by other modules. retry to start this
-unshare --propagation slave -m sh -c "$MODDIR/daemon --from-service $@&"
+
+unshare --propagation slave -m sh -c "$MODDIR/daemon $@&"
