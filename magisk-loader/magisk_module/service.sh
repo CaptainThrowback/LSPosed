@@ -23,4 +23,4 @@ rm -f "/data/local/tmp/daemon.apk"
 rm -f "/data/local/tmp/manager.apk"
 cd "$MODDIR"
 
-unshare --propagation slave -m sh -c "$MODDIR/daemon $@&"
+unshare --propagation slave -m sh -c "$MODDIR/daemon --system-server-max-retry=5 $@&"
